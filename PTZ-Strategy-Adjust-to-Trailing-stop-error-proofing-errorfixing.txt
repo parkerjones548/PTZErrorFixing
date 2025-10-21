@@ -1230,9 +1230,10 @@ namespace NinjaTrader.NinjaScript.Strategies
 		{
 			try
 			{
-				if (GetCurrentBid() != null)
-					return GetCurrentBid().Price;
-				return Close[0]; // Fallback to last close
+				var bid = GetCurrentBid();
+				if (bid != null)
+					return bid.Price;
+				return Close[0];
 			}
 			catch
 			{
@@ -1244,9 +1245,10 @@ namespace NinjaTrader.NinjaScript.Strategies
 		{
 			try
 			{
-				if (GetCurrentAsk() != null)
-					return GetCurrentAsk().Price;
-				return Close[0]; // Fallback to last close
+				var ask = GetCurrentAsk();
+				if (ask != null)
+					return ask.Price;
+				return Close[0];
 			}
 			catch
 			{
