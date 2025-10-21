@@ -1216,7 +1216,7 @@ namespace NinjaTrader.NinjaScript.Strategies
 				}
 
 				// Place the stop order
-				SetStopLoss(CalculationMode.Price, stopPrice);
+				SetStopLoss("", CalculationMode.Price, stopPrice, false);
 				return true;
 			}
 			catch (Exception ex)
