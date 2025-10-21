@@ -1230,9 +1230,9 @@ namespace NinjaTrader.NinjaScript.Strategies
 		{
 			try
 			{
-				var bid = GetCurrentBid();
-				if (bid != null)
-					return bid.Price;
+				double bid = GetCurrentBid();
+				if (bid > 0)
+					return bid;
 				return Close[0];
 			}
 			catch
@@ -1245,9 +1245,9 @@ namespace NinjaTrader.NinjaScript.Strategies
 		{
 			try
 			{
-				var ask = GetCurrentAsk();
-				if (ask != null)
-					return ask.Price;
+				double ask = GetCurrentAsk();
+				if (ask > 0)
+					return ask;
 				return Close[0];
 			}
 			catch
